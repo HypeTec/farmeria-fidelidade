@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
 <div class="container">
@@ -14,7 +14,7 @@
                                     <th>#</th>
 									<th>Name</th>
 									<th>Username</th>
-									<th>Password</th>
+									<th>Nome da loja</th>
 
                                     <th class="text-right">Options</th>
                                 </tr>
@@ -27,7 +27,7 @@
 
 										<td>{{ $item->name }}</td>
 										<td>{{ $item->username }}</td>
-										<td>{{ $item->password }}</td>
+										<td>{{ $item->loja->nome}}</td>
                                         <td class="text-right">
                                             <a class="btn btn-xs btn-primary" href="{{ route('operadors.show', $item->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                                             <a class="btn btn-xs btn-warning" href="{{ route('operadors.edit', $item->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>

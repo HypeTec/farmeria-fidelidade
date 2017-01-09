@@ -20,6 +20,10 @@
 								<th>Nome de usuário</th>
 								<td>{{ $item->username }}</td>
 							</tr>
+                            <tr>
+                                <th>Loja</th>
+                                <td>{{ $item->loja->name }}</td>
+                            </tr>
 
                         </table>
                     </div>

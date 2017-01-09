@@ -22,6 +22,13 @@
 								<label for="password">Nova senha</label>
 								<input type="password" name="password"  class="form-control" id="password" placeholder="Nova senha">
 							</div>
+                            <select name="loja_id">
+                                <option value="">Selecione uma loja</option>
+                                @foreach ($lojas as $l)
+                                    <option value="{{$l->id}}" @if ($l->id == $item->loja_id) selected @endif>{{$l->name}}</option>
+                                @endforeach
+                            </select>
+
                             <button type="submit" class="btn btn-default">Editar</button>
                             <a href="{{ route('lojas.index') }}" class="btn btn-danger pull-right">Cancelar</a>
                         </form>

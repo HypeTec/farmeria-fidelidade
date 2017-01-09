@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
     <div class="container">
@@ -18,10 +18,19 @@
 								<label for="username">Username</label>
 								<input type="text" name="username" value="{{ $item->username }}" class="form-control" id="username" placeholder="username">
 							</div>
+                            <div class="form-group">
+                                <select name="loja_id">
+
+                                    @foreach ($lojas as $l)
+                                        <option value="{{$l->id}}" @if ($l->id == $item->loja_id) selected @endif>{{$l->nome}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 							<div class="form-group">
 								<label for="password">Password</label>
-								<input type="text" name="password" value="{{ $item->password }}" class="form-control" id="password" placeholder="password">
+								<input type="password" name="password" class="form-control" id="password" placeholder="password">
 							</div>
+
                             <button type="submit" class="btn btn-default">Editar</button>
                             <a href="{{ route('operadors.index') }}" class="btn btn-danger pull-right">Cancelar</a>
                         </form>

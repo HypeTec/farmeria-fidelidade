@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
     <div class="container">
@@ -21,8 +21,8 @@
 								<td>{{ $item->username }}</td>
 							</tr>
 							<tr>
-								<th>Password</th>
-								<td>{{ $item->password }}</td>
+								<th>Nome da Loja</th>
+								<td>{{ $item->loja->nome }}</td>
 							</tr>
                         </table>
                     </div>

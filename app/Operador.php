@@ -15,13 +15,19 @@ class Operador extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'password'
+        'name', 'username', 'password', 'loja_id'
     ];
 
     public function getFillables()
     {
         return $this->fillable;
     }
+
+    public function loja()
+    {
+        return $this->belongsTo('App\Loja');
+    }
+
 
 
 }
