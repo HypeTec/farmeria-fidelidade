@@ -3,28 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use App\Loja;
+use App\Usuario;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
 use Validator;
 
-class LojaController extends CrudController
+class UsuarioController extends CrudController
 {
 
+  // $rules = [
+  //   'nome' => 'required',
+  //   'pin' => 'required',
+  //   'sexo' => 'required',
+  //   'data_nascimento' => 'required',
+  //   'cpf' => 'required',
+  //   'email' => 'required',
+  //   'celular' => 'required',
+  //   'fixo' => 'required',
+  // ];
     public function __construct()
     {
         $this->paginatorLimit = 10;
-        parent::__construct(Loja::class);
+        parent::__construct(Usuario::class);
     }
 
     public function validateRulesOnCreate(Request $request)
     {
 		$rules = [
 			'nome' => 'required',
-			'username' => 'required',
-			'password' => 'required',
+			'celular' => 'required',
 		];
 		return Validator::make($request->all(), $rules);
     }
@@ -33,8 +42,7 @@ class LojaController extends CrudController
     {
 		$rules = [
 			'nome' => 'required',
-			'username' => 'required',
-			
+			'celular' => 'required',
 		];
 		return Validator::make($request->all(), $rules);
     }
@@ -49,7 +57,10 @@ class LojaController extends CrudController
 
         foreach($this->getModel()->getFillables() as $column)
         {
+          if ($request->get($column) != "")
+          {
             $this->getModel()->$column = ($column == 'password' ? bcrypt($request->get($column)) : $request->get($column));
+          }
         }
 
         DB::beginTransaction();
@@ -86,13 +97,12 @@ class LojaController extends CrudController
 
         foreach($item->getFillables() as $column)
         {
-          if ($column == 'password' && $request->get($column) != "")
+
+          if ($request->get($column) != "")
           {
-            $this->getModel()->$column = bcrypt($request->get($column));
+
+            $item->$column = ($column == 'password' ? bcrypt($request->get($column)) : $request->get($column));
           }
-          else $item->$column = $request->get($column);
-
-
         }
 
         DB::beginTransaction();
@@ -100,6 +110,7 @@ class LojaController extends CrudController
         {
             $item->save();
             DB::commit();
+
             return redirect(route($this->route_base_name . '.index'))->with('success', 'registro editado com sucesso');
         }
         catch(\Exception $ex)
@@ -108,5 +119,7 @@ class LojaController extends CrudController
             return redirect(route($this->route_base_name . '.edit', $item->id))->withErrors($ex->getMessage())->withInput();
         }
     }
+
+
 
 }

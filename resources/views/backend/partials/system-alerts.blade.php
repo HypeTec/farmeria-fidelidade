@@ -1,3 +1,4 @@
+<br />
 <div class="content" style="min-height: 0; padding-top: 0; padding-bottom: 0; position: relative;">
     <div class="system-alerts">
         @if(isset($errors) and count($errors) > 0)

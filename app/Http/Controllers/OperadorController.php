@@ -22,9 +22,9 @@ class OperadorController extends CrudController
     public function validateRulesOnCreate(Request $request)
     {
 		$rules = [
-			'name' => 'required', 
-			'username' => 'required', 
-			'password' => 'required', 
+			'name' => 'required',
+			'username' => 'required',
+			'password' => 'required',
 		];
 		return Validator::make($request->all(), $rules);
     }
@@ -32,9 +32,9 @@ class OperadorController extends CrudController
     public function validateRulesOnUpdate(Request $request)
     {
 		$rules = [
-			'name' => 'required', 
-			'username' => 'required', 
-			'password' => 'required', 
+			'name' => 'required',
+			'username' => 'required',
+			
 		];
 		return Validator::make($request->all(), $rules);
     }
@@ -99,6 +99,48 @@ class OperadorController extends CrudController
         catch(ModelNotFoundException $ex)
         {
             return redirect(route($this->route_base_name . '.index'))->withErrors($ex->getMessage());
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try
+        {
+            $item = $this->getModel()->findOrFail($id);
+        }
+        catch(ModelNotFoundException $ex)
+        {
+            return redirect(route($this->route_base_name . '.index'))->withErrors($ex->getMessage());
+        }
+
+        $validator = $this->validateRulesOnUpdate($request);
+        if($validator->fails())
+        {
+            return redirect(route($this->route_base_name . '.edit', $item->id))->withErrors($validator);
+        }
+
+        foreach($item->getFillables() as $column)
+        {
+          if ($column == 'password' && $request->get($column) != "")
+          {
+            $this->getModel()->$column = bcrypt($request->get($column));
+          }
+          else $item->$column = $request->get($column);
+
+
+        }
+
+        DB::beginTransaction();
+        try
+        {
+            $item->save();
+            DB::commit();
+            return redirect(route($this->route_base_name . '.index'))->with('success', 'registro editado com sucesso');
+        }
+        catch(\Exception $ex)
+        {
+            DB::rollBack();
+            return redirect(route($this->route_base_name . '.edit', $item->id))->withErrors($ex->getMessage())->withInput();
         }
     }
 

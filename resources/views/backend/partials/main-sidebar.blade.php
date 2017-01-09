@@ -34,6 +34,11 @@
                     <i class="fa fa-list"></i> <span>Operadores</span>
                 </a>
             </li>
+            <li {!! str_is(route('usuarios.index') . '*', url()->current()) ? 'class="active"' : '' !!}>
+                <a href="{{ route('usuarios.index') }}">
+                    <i class="fa fa-list"></i> <span>Usuários</span>
+                </a>
+            </li>
             <li>
                 <a href="#" onclick="$('#sair').submit();">
                     <i class="fa fa-sign-out"></i> <span>Sair</span>
