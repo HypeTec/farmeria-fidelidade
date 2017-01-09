@@ -27,3 +27,5 @@ Route::group(['prefix' => 'backend'], function(){
         Route::resource('lojas', 'LojaController');
     });
 });
+
+Route::resource('operadors', 'OperadorController');
