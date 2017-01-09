@@ -18,8 +18,8 @@
 <div class="wrapper">
     <header class="main-header">
         <a href="{{ route('backend') }}" class="logo">
-            <span class="logo-mini"><b>N</b>C</span>
-            <span class="logo-lg"><b>NAVI</b>CMS</span>
+            <span class="logo-mini"><b>F</b>F</span>
+            <span class="logo-lg"><b>Farmeria</b> fidelidade</span>
         </a>
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
