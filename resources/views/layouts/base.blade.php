@@ -14,11 +14,11 @@
     <![endif]-->
     @yield('extra_styles')
 </head>
-<body class="hold-transition skin-blue sidebar-mini fixed">
+<body class="hold-transition skin-green sidebar-mini fixed">
 <div class="wrapper">
     <header class="main-header">
         <a href="{{ route('backend') }}" class="logo">
-            <span class="logo-mini"><b>F</b>F</span>
+            <span class="logo-mini"><b>Farm</b></span>
             <span class="logo-lg"><b>Farmeria</b> fidelidade</span>
         </a>
         <nav class="navbar navbar-static-top">

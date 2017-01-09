@@ -12,9 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/backend/login');
 });
 
-Auth::routes();
+Route::get('/login', function() {
+  return redirect('/backend/login');
+});
 
-Route::get('/home', 'HomeController@index');
+Route::group(['prefix' => 'backend'], function(){
+    Auth::routes();
+
+    Route::group(['middleware' => ['auth']], function(){
+        Route::get('/', 'BackendController@index')->name('backend');
+        Route::resource('lojas', 'LojaController');
+    });
+});
