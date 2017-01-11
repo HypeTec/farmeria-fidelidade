@@ -26,8 +26,7 @@ Route::group(['prefix' => 'backend'], function(){
     Route::group(['middleware' => ['auth']], function(){
         Route::get('/', 'BackendController@index')->name('backend');
         Route::resource('lojas', 'LojaController');
+        Route::resource('operadores', 'OperadorController');
+        Route::resource('usuarios', 'UsuarioController');
     });
 });
-
-Route::resource('operadores', 'OperadorController');
-Route::resource('usuarios', 'UsuarioController');
