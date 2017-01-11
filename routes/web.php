@@ -28,5 +28,6 @@ Route::group(['prefix' => 'backend'], function(){
         Route::resource('lojas', 'LojaController');
         Route::resource('operadores', 'OperadorController');
         Route::resource('usuarios', 'UsuarioController');
+        Route::post('operadores/changeStatus/{id}','OperadorController@changeStatus')->name('cu');
     });
 });

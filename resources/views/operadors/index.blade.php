@@ -13,9 +13,8 @@
               <tr>
                 <th>#</th>
                 <th>Nome do operador</th>
-                <th>Nome de uusário</th>
-                <th>Nome da loja</th>
-
+                <th>Nome de usuário</th>
+                <th>Status</th>
                 <th class="text-right">Opções</th>
               </tr>
             </thead>
@@ -24,19 +23,28 @@
               @foreach($list as $item)
               <tr>
                 <td>{{ $item->id }}</td>
-
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->username }}</td>
-                <td>{{ $item->loja->nome}}</td>
+
+                <td>
+                  <form action="{{ url('backend/operadores/changeStatus/$item->id') }}" method="POST" style="display: inline;" onsubmit="if(confirm('{{$item->status_texts['confirmation_message']}}')) { return true } else {return false };">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn btn-xs btn-{{$item->status_texts['class']}}" >{{$item->status_texts['text']}}</button>
+                  </form>
+                </td>
+                <a class="btn btn-xs btn-{{$item->status_texts['class']}}" href="#" >{{$item->status_texts['text']}}</a>
                 <td class="text-right">
                   <a class="btn btn-xs btn-primary" href="{{ route('operadores.show', $item->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                   <a class="btn btn-xs btn-warning" href="{{ route('operadores.edit', $item->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+
                   <form action="{{ route('operadores.destroy', $item->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar?')) { return true } else {return false };">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Deletar</button>
                   </form>
                 </td>
+                <
               </tr>
               @endforeach
             </tbody>

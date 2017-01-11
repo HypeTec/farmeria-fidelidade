@@ -144,6 +144,39 @@ class OperadorController extends CrudController
         }
     }
 
+    public function changeStatus(Request $request, $id)
+    {
+      
+      try
+      {
+          $item = $this->getModel()->findOrFail($id);
+      }
+      catch(ModelNotFoundException $ex)
+      {
+          return redirect(route('operadores.index'))->withErrors($ex->getMessage());
+      }
+
+      if($item->status_id==1)
+      {
+          $item->status_id = 0;
+      }
+
+      DB::beginTransaction();
+      try
+      {
+          $item->save();
+          DB::commit();
+          return redirect(route('operadores.index'))->with('success', 'registro editado com sucesso');
+      }
+      catch(\Exception $ex)
+      {
+          DB::rollBack();
+          return redirect(route('operadores.edit', $item->id))->withErrors($ex->getMessage())->withInput();
+      }
+
+
+    }
+
 
 
 }

@@ -15,7 +15,7 @@ class Operador extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'password', 'status'
+        'name', 'username', 'password', 'status_id'
     ];
     //'loja_id'
     public function getFillables()
@@ -23,11 +23,24 @@ class Operador extends Model
         return $this->fillable;
     }
 
-    // public function loja()
-    // {
-    //     return $this->belongsTo('App\Loja');
-    // }
+    public function getStatusTextsAttribute()
+    {
+      if($this->status_id == 0)
+      {
+        $text['text'] = 'Inativo';
+        $text['class'] = 'danger';
+        return $text;
+      }
+      else if ($this->status_id == 1)
+      {
+        $text['text'] = 'Ativo';
+        $text['class'] = 'info';
+        $text['confirmation_message']='Tem certeza que deseja tornar o operador inativo?';
+        return $text;
+      }
+    }
 
+    
 
 
 }
