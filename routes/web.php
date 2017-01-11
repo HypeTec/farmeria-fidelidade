@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return redirect('/backend/login');
+    return view('welcome');
+    //return redirect('/backend/login');
 });
 
 Route::get('/login', function() {
