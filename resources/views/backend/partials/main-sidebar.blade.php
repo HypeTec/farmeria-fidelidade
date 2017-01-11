@@ -29,8 +29,8 @@
                     <i class="fa fa-list"></i> <span>Lojas</span>
                 </a>
             </li>
-            <li {!! str_is(route('operadors.index') . '*', url()->current()) ? 'class="active"' : '' !!}>
-                <a href="{{ route('operadors.index') }}">
+            <li {!! str_is(route('operadores.index') . '*', url()->current()) ? 'class="active"' : '' !!}>
+                <a href="{{ route('operadores.index') }}">
                     <i class="fa fa-list"></i> <span>Operadores</span>
                 </a>
             </li>

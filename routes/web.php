@@ -29,5 +29,5 @@ Route::group(['prefix' => 'backend'], function(){
     });
 });
 
-Route::resource('operadors', 'OperadorController');
+Route::resource('operadores', 'OperadorController');
 Route::resource('usuarios', 'UsuarioController');

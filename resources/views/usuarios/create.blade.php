@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Criar novo Usuario</div>
                     <div class="panel-body">
@@ -11,11 +11,11 @@
                             {{ csrf_field() }}
 							<div class="form-group">
 								<label for="nome">Nome</label>
-								<input type="text" name="nome" class="form-control" id="nome" placeholder="nome" value="{{ old('nome') }}">
+								<input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" value="{{ old('nome') }}">
 							</div>
 							<div class="form-group">
 								<label for="pin">Pin</label>
-								<input type="text" name="pin" class="form-control" id="pin" placeholder="pin" value="{{ old('pin') }}">
+								<input type="text" name="pin" class="form-control" id="pin" placeholder="PIN" value="{{ old('pin') }}">
 							</div>
 							<div class="form-group">
 								<label for="sexo">Sexo</label>
