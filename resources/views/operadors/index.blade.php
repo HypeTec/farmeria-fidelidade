@@ -27,13 +27,13 @@
                 <td>{{ $item->username }}</td>
 
                 <td>
-                  <form action="{{ url('backend/operadores/changeStatus/$item->id') }}" method="POST" style="display: inline;" onsubmit="if(confirm('{{$item->status_texts['confirmation_message']}}')) { return true } else {return false };">
-                    <input type="hidden" name="_method" value="DELETE">
+                  <form action="{{ route('cu', $item->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('{{$item->status_texts['confirmation_message']}}')) { return true } else {return false };">
+
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button type="submit" class="btn btn-xs btn-{{$item->status_texts['class']}}" >{{$item->status_texts['text']}}</button>
+                    <button type="submit" class="btn btn-xs btn-{{$item->status_texts['class']}}">{{$item->status_texts['text']}}</button>
                   </form>
                 </td>
-                <a class="btn btn-xs btn-{{$item->status_texts['class']}}" href="#" >{{$item->status_texts['text']}}</a>
+
                 <td class="text-right">
                   <a class="btn btn-xs btn-primary" href="{{ route('operadores.show', $item->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                   <a class="btn btn-xs btn-warning" href="{{ route('operadores.edit', $item->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
@@ -44,7 +44,7 @@
                     <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Deletar</button>
                   </form>
                 </td>
-                <
+                
               </tr>
               @endforeach
             </tbody>

@@ -29,6 +29,7 @@ class Operador extends Model
       {
         $text['text'] = 'Inativo';
         $text['class'] = 'danger';
+        $text['confirmation_message']='Tem certeza que deseja tornar o operador ativo?';
         return $text;
       }
       else if ($this->status_id == 1)
@@ -40,7 +41,7 @@ class Operador extends Model
       }
     }
 
-    
+
 
 
 }

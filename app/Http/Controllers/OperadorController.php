@@ -146,7 +146,7 @@ class OperadorController extends CrudController
 
     public function changeStatus(Request $request, $id)
     {
-      
+
       try
       {
           $item = $this->getModel()->findOrFail($id);
@@ -159,6 +159,10 @@ class OperadorController extends CrudController
       if($item->status_id==1)
       {
           $item->status_id = 0;
+      }
+      else if ($item->status_id == 0)
+      {
+        $item->status_id = 1;
       }
 
       DB::beginTransaction();
