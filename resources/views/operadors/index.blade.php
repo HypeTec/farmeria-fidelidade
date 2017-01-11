@@ -16,7 +16,7 @@
 									<th>Username</th>
 									<th>Nome da loja</th>
 
-                                    <th class="text-right">Options</th>
+                                    <th class="text-right">Opções</th>
                                 </tr>
                             </thead>
 

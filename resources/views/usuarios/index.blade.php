@@ -21,7 +21,7 @@
 									<th>Celular</th>
 									<th>Fixo</th>
 
-                                    <th class="text-right">Options</th>
+                                    <th class="text-right">Opções</th>
                                 </tr>
                             </thead>
 

@@ -15,7 +15,7 @@
 									<th>Nome</th>
 									<th>Nome de usuário</th>
 
-                                    <th class="text-right">Options</th>
+                                    <th class="text-right">Opções</th>
                                 </tr>
                             </thead>
 

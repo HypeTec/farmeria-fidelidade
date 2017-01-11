@@ -14,12 +14,12 @@
 								<input type="text" name="nome" class="form-control" id="nome" placeholder="nome" value="{{ old('nome') }}">
 							</div>
 							<div class="form-group">
-								<label for="username">Username</label>
-								<input type="text" name="username" class="form-control" id="username" placeholder="username" value="{{ old('username') }}">
+								<label for="username">Nome de usuário</label>
+								<input type="text" name="username" class="form-control" id="username" placeholder="Nome de usuário" value="{{ old('username') }}">
 							</div>
 							<div class="form-group">
-								<label for="password">Password</label>
-								<input type="password" name="password" class="form-control" id="password" placeholder="password">
+								<label for="password">Senha</label>
+								<input type="password" name="password" class="form-control" id="password" placeholder="Senha">
 							</div>
                             <button type="submit" class="btn btn-default">Criar</button>
                             <a href="{{ route('lojas.index') }}" class="btn btn-danger pull-right">Cancelar</a>

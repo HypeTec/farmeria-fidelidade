@@ -34,7 +34,7 @@ class LojaController extends CrudController
 		$rules = [
 			'nome' => 'required',
 			'username' => 'required',
-			
+
 		];
 		return Validator::make($request->all(), $rules);
     }
