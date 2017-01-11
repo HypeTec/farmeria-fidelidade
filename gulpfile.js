@@ -65,6 +65,7 @@ elixir(function(mix) {
         bower + admin + 'plugins/select2/select2.full.js',
         bower + admin + 'plugins/select2/i18n/pt-BR.js',
         bower + admin + 'dist/js/app.min.js',
+        bower + 'jquery-mask-plugin/dist/jquery.mask.min.js',
         '../backend/js/custom.js'
     ], 'public/assets/backend/js');
 
