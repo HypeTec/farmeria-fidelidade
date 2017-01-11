@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddLojaIdToOperador extends Migration
+class AddStatusToOperador extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class AddLojaIdToOperador extends Migration
      */
     public function up()
     {
-        Schema::table('operadors', function (Blueprint $table)
-        {
-            $table->integer('loja_id')->unsigned();
-
-            $table->foreign('loja_id')->references('id')->on('lojas');
+        Schema::table('operadors', function (Blueprint $table) {
+          $table->integer('status_id')->unsigned()->default(1);
         });
     }
 
@@ -29,9 +26,7 @@ class AddLojaIdToOperador extends Migration
     public function down()
     {
         Schema::table('operadors', function (Blueprint $table) {
-
-            $table->dropForeign('loja_id');
-            $table->dropColumn('loja_id');
+          $table->dropColumn('status_id');
         });
     }
 }
