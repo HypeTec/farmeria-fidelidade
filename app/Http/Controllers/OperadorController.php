@@ -34,7 +34,7 @@ class OperadorController extends CrudController
 		$rules = [
 			'name' => 'required',
 			'username' => 'required',
-			
+
 		];
 		return Validator::make($request->all(), $rules);
     }
