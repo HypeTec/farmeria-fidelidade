@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Mostrando Usuario <a class="btn btn-xs btn-primary pull-right" href="{{ route('usuarios.index') }}"><i class="glyphicon glyphicon-arrow-left"></i> Voltar</a></div>
+                    <div class="panel-heading">Mostrando Usuário <a class="btn btn-xs btn-primary pull-right" href="{{ route('usuarios.index') }}"><i class="glyphicon glyphicon-arrow-left"></i> Voltar</a></div>
                     <div class="panel-body">
                         <table class="table table-bordered table-striped">
                             <tr>
@@ -25,11 +25,11 @@
 								<td>{{ $item->sexo }}</td>
 							</tr>
 							<tr>
-								<th>Data_nascimento</th>
+								<th>Data de nascimento</th>
 								<td>{{ $item->data_nascimento }}</td>
 							</tr>
 							<tr>
-								<th>Cpf</th>
+								<th>CPF</th>
 								<td>{{ $item->cpf }}</td>
 							</tr>
 							<tr>

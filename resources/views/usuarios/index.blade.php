@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Usuarios <a class="btn btn-xs btn-primary pull-right" href="{{ route('usuarios.create') }}"><i class="glyphicon glyphicon-plus"></i> adicionar Usuario</a></div>
+                <div class="panel-heading">Usuarios <a class="btn btn-xs btn-primary pull-right" href="{{ route('usuarios.create') }}"><i class="glyphicon glyphicon-plus"></i> adicionar Usuário</a></div>
                 <div class="panel-body">
                     @if($list->count())
                         <table class="table table-condensed table-striped">
@@ -15,8 +15,8 @@
 									<th>Nome</th>
 									<th>Pin</th>
 									<th>Sexo</th>
-									<th>Data_nascimento</th>
-									<th>Cpf</th>
+									<th>Data de nascimento</th>
+									<th>CPF</th>
 									<th>Email</th>
 									<th>Celular</th>
 									<th>Fixo</th>
