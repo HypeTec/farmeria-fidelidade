@@ -23,11 +23,11 @@
 							</div>
 							<div class="form-group">
 								<label for="data_nascimento">Data_nascimento</label>
-								<input type="text" name="data_nascimento" class="form-control" id="data_nascimento" placeholder="data_nascimento" value="{{ old('data_nascimento') }}">
+								<input type="text" name="data_nascimento" class="form-control date" id="data_nascimento" placeholder="data_nascimento" value="{{ old('data_nascimento') }}">
 							</div>
 							<div class="form-group">
 								<label for="cpf">Cpf</label>
-								<input type="text" name="cpf" class="form-control" id="cpf" placeholder="cpf" value="{{ old('cpf') }}">
+								<input type="text" name="cpf" class="form-control cpf" id="cpf" placeholder="cpf" value="{{ old('cpf') }}">
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
@@ -35,11 +35,11 @@
 							</div>
 							<div class="form-group">
 								<label for="celular">Celular</label>
-								<input type="text" name="celular" class="form-control" id="celular" placeholder="celular" value="{{ old('celular') }}">
+								<input type="text" name="celular" class="form-control phone" id="celular" placeholder="celular" value="{{ old('celular') }}">
 							</div>
 							<div class="form-group">
 								<label for="fixo">Fixo</label>
-								<input type="text" name="fixo" class="form-control" id="fixo" placeholder="fixo" value="{{ old('fixo') }}">
+								<input type="text" name="fixo" class="form-control fixo" id="fixo" placeholder="fixo" value="{{ old('fixo') }}">
 							</div>
                             <button type="submit" class="btn btn-default">Criar</button>
                             <a href="{{ route('usuarios.index') }}" class="btn btn-danger pull-right">Cancelar</a>
@@ -49,4 +49,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('extra_scripts')
+  <script>
+    $(document).ready(function (){
+      $('.date').mask('00/00/0000');
+      $('.cpf').mask('000.000.000-00');
+      $('.phone').mask('(00) 00000-0000');
+      $('.fixo').mask('(00) 0000-0000');
+    })
+  </script>
 @endsection
