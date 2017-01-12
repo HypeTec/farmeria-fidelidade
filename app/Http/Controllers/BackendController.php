@@ -10,4 +10,11 @@ class BackendController extends Controller
     {
       return view('backend.dashboard');
     }
+
+    public function user()
+    {
+        $user = Auth::user();
+        return $user;
+    }
+
 }

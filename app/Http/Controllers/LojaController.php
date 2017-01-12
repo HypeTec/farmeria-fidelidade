@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use App\Loja;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +16,12 @@ class LojaController extends CrudController
     public function __construct()
     {
         $this->paginatorLimit = 10;
-        parent::__construct(Loja::class);
+        parent::__construct(User::class);
+    }
+
+    public function getModel()
+    {
+        return App\User::class;
     }
 
     public function validateRulesOnCreate(Request $request)
@@ -39,6 +44,16 @@ class LojaController extends CrudController
 		return Validator::make($request->all(), $rules);
     }
 
+    public function index()
+    {
+        $list = $this->getModel()->paginate($this->paginatorLimit);
+        return view('lojas.index',compact('list'));
+    }
+    public function create()
+    {
+        return view('lojas.create0');
+    }
+
     public function store(Request $request)
     {
         $validator = $this->validateRulesOnCreate($request);
@@ -55,6 +70,7 @@ class LojaController extends CrudController
         DB::beginTransaction();
         try
         {
+            $this->role_id = 1;
             $this->getModel()->save();
             DB::commit();
 
