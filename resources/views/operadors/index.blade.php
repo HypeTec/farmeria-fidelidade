@@ -15,7 +15,7 @@
                 <th>Nome do operador</th>
                 <th>Nome de usuário</th>
                 <th>Status</th>
-                <th class="text-right">Opções</th>
+                <th>Opções</th>
               </tr>
             </thead>
 
@@ -34,7 +34,7 @@
                   </form>
                 </td>
 
-                <td class="text-right">
+                <td>
                   <a class="btn btn-xs btn-primary" href="{{ route('operadores.show', $item->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                   <a class="btn btn-xs btn-warning" href="{{ route('operadores.edit', $item->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
 
@@ -44,7 +44,7 @@
                     <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Deletar</button>
                   </form>
                 </td>
-                
+
               </tr>
               @endforeach
             </tbody>
