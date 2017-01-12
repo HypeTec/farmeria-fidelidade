@@ -14,6 +14,8 @@ class AddUsernameRoleToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+          $table->string('username')->unique();
+          $table->integer('role_id')->default(999);
 
         });
     }
@@ -26,7 +28,7 @@ class AddUsernameRoleToUser extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-
+          $table->dropColumn(['username', 'role_id']);
         });
     }
 }
