@@ -14,7 +14,7 @@
             </tr>
             <tr>
               <th>Nome da Loja</th>
-              <td>{{ $item->nome }}</td>
+              <td>{{ $item->name }}</td>
             </tr>
             <tr>
               <th>Nome de usuário</th>

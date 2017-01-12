@@ -17,17 +17,13 @@ class LojaController extends CrudController
     {
         $this->paginatorLimit = 10;
         parent::__construct(User::class);
-    }
-
-    public function getModel()
-    {
-        return App\User::class;
+        $this->middleware('admin');
     }
 
     public function validateRulesOnCreate(Request $request)
     {
 		$rules = [
-			'nome' => 'required',
+			'name' => 'required',
 			'username' => 'required',
 			'password' => 'required',
 		];
@@ -37,7 +33,7 @@ class LojaController extends CrudController
     public function validateRulesOnUpdate(Request $request)
     {
 		$rules = [
-			'nome' => 'required',
+			'name' => 'required',
 			'username' => 'required',
 
 		];
@@ -46,12 +42,12 @@ class LojaController extends CrudController
 
     public function index()
     {
-        $list = $this->getModel()->paginate($this->paginatorLimit);
+        $list = $this->getModel()->where('role_id', '=', '1')->paginate($this->paginatorLimit);
         return view('lojas.index',compact('list'));
     }
     public function create()
     {
-        return view('lojas.create0');
+        return view('lojas.create');
     }
 
     public function store(Request $request)
@@ -59,7 +55,7 @@ class LojaController extends CrudController
         $validator = $this->validateRulesOnCreate($request);
         if($validator->fails())
         {
-            return redirect(route($this->route_base_name . '.create'))->withErrors($validator)->withInput();
+            return redirect(route('lojas.create'))->withErrors($validator)->withInput();
         }
 
         foreach($this->getModel()->getFillables() as $column)
@@ -70,16 +66,16 @@ class LojaController extends CrudController
         DB::beginTransaction();
         try
         {
-            $this->role_id = 1;
+            $this->getModel()->role_id = 1;
             $this->getModel()->save();
             DB::commit();
 
-            return redirect(route($this->route_base_name . '.index'))->with('success', 'registro criado com sucesso');
+            return redirect(route('lojas.index'))->with('success', 'registro criado com sucesso');
         }
         catch(\Exception $ex)
         {
             DB::rollBack();
-            return redirect(route($this->route_base_name . '.create'))->withErrors($ex->getMessage())->withInput();
+            return redirect(route('lojas.create'))->withErrors($ex->getMessage())->withInput();
         }
     }
 
@@ -91,13 +87,13 @@ class LojaController extends CrudController
         }
         catch(ModelNotFoundException $ex)
         {
-            return redirect(route($this->route_base_name . '.index'))->withErrors($ex->getMessage());
+            return redirect(route('lojas.index'))->withErrors($ex->getMessage());
         }
 
         $validator = $this->validateRulesOnUpdate($request);
         if($validator->fails())
         {
-            return redirect(route($this->route_base_name . '.edit', $item->id))->withErrors($validator);
+            return redirect(route('lojas.edit', $item->id))->withErrors($validator);
         }
 
         foreach($item->getFillables() as $column)
@@ -116,12 +112,12 @@ class LojaController extends CrudController
         {
             $item->save();
             DB::commit();
-            return redirect(route($this->route_base_name . '.index'))->with('success', 'registro editado com sucesso');
+            return redirect(route('lojas.index'))->with('success', 'registro editado com sucesso');
         }
         catch(\Exception $ex)
         {
             DB::rollBack();
-            return redirect(route($this->route_base_name . '.edit', $item->id))->withErrors($ex->getMessage())->withInput();
+            return redirect(route('lojas.edit', $item->id))->withErrors($ex->getMessage())->withInput();
         }
     }
 

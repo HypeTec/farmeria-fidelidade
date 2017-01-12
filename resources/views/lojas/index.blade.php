@@ -24,7 +24,7 @@
               <tr>
                 <td>{{ $item->id }}</td>
 
-                <td>{{ $item->nome }}</td>
+                <td>{{ $item->name }}</td>
                 <td>{{ $item->username }}</td>
                 <td class="text-right">
                   <a class="btn btn-xs btn-primary" href="{{ route('lojas.show', $item->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>

@@ -19,7 +19,7 @@
     <header class="main-header">
         <a href="{{ route('backend') }}" class="logo">
             <span class="logo-mini"><b>Farm</b></span>
-            <span class="logo-lg"><b>Farmeria</b> admin</span>
+            <span class="logo-lg"><b>Farmeria</b> fidelidade</span>
         </a>
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
@@ -31,10 +31,9 @@
             </a>
         </nav>
     </header>
-    @if(Auth::user()->role_id==999)
+    @if (Auth::user()->role_id==999)
         @include('backend.partials.main-sidebar')
-    @endif
-    @if(Auth::user()->role_id==1)
+    @elseif (Auth::user()->role_id==1)
         @include('backend.partials.loja-sidebar')
     @endif
 

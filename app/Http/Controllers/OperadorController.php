@@ -17,6 +17,7 @@ class OperadorController extends CrudController
     {
         $this->paginatorLimit = 10;
         parent::__construct(Operador::class);
+        $this->middleware('admin');
     }
 
     public function validateRulesOnCreate(Request $request)

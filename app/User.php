@@ -27,5 +27,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getFillables()
+    {
+      return $this->fillable;
+    }
+
 
 }

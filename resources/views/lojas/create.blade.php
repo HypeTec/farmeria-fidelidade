@@ -11,7 +11,7 @@
             {{ csrf_field() }}
             <div class="form-group">
               <label for="nome">Nome da loja</label>
-              <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome da loja" value="{{ old('nome') }}">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nome da loja" value="{{ old('name') }}">
             </div>
             <div class="form-group">
               <label for="username">Nome de usuário</label>
