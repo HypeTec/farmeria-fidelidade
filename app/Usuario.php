@@ -23,5 +23,10 @@ class Usuario extends Model
         return $this->fillable;
     }
 
+    public function card()
+    {
+      return $this->hasMany('App\Card');
+    }
+
 
 }
