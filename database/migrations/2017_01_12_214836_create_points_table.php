@@ -16,10 +16,10 @@ class CreatePointsTable extends Migration
         Schema::create('points', function (Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('card_id');
+            $table->integer('card_id')->unsigned();
             $table->string('cupomfiscal');
             $table->timestamps();
-            $table->integer('operador_id');
+            $table->integer('operador_id')->unsigned();
 
             $table->foreign('card_id')->references('id')->on('cards');
 

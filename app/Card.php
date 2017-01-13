@@ -14,7 +14,7 @@ class Card extends Model
         return $this->belongsTo('App\Usuario');
     }
 
-    public function points()
+    public function pontos()
     {
       return $this->hasMany('App\Point');
     }
