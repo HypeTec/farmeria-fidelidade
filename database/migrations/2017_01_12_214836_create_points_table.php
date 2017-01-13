@@ -20,6 +20,7 @@ class CreatePointsTable extends Migration
             $table->string('cupomfiscal');
             $table->timestamps();
             $table->integer('operador_id')->unsigned();
+            $table->date('data_compra');
 
             $table->foreign('card_id')->references('id')->on('cards');
 
