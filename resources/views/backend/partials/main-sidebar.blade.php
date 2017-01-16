@@ -39,6 +39,11 @@
                     <i class="fa fa-list"></i> <span>Usuários</span>
                 </a>
             </li>
+            <li {!! str_is(route('usuarios.adicionarponto') . '*', url()->current()) ? 'class="active"' : '' !!}>
+                <a href="{{ route('usuarios.adicionarponto') }}">
+                  <i class="fa fa-list"></i> <span>Cadastrar ponto</span>
+                </a>
+            </li>
             <li>
                 <a href="#" onclick="$('#sair').submit();">
                     <i class="fa fa-sign-out"></i> <span>Sair</span>

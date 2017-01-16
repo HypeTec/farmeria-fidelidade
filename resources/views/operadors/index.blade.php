@@ -27,7 +27,7 @@
                 <td>{{ $item->username }}</td>
 
                 <td>
-                  <form action="{{ route('cu', $item->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('{{$item->status_texts['confirmation_message']}}')) { return true } else {return false };">
+                  <form action="{{ route('operadores.changestatus', $item->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('{{$item->status_texts['confirmation_message']}}')) { return true } else {return false };">
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-xs btn-{{$item->status_texts['class']}}">{{$item->status_texts['text']}}</button>

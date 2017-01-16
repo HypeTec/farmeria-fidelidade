@@ -120,6 +120,16 @@ class UsuarioController extends CrudController
         }
     }
 
+    public function showpontoform()
+    {
+      return view('usuarios.cartao');
+    }
+
+    public function assinarponto(Request $request, $id)
+    {
+
+    }
+
 
 
 }

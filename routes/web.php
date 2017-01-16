@@ -28,6 +28,9 @@ Route::group(['prefix' => 'backend'], function(){
         Route::resource('lojas', 'LojaController');
         Route::resource('operadores', 'OperadorController');
         Route::resource('usuarios', 'UsuarioController');
-        Route::post('operadores/changeStatus/{id}','OperadorController@changeStatus')->name('cu');
+        Route::post('operadores/changeStatus/{id}','OperadorController@changeStatus')->name('operadores.changestatus');
+        Route::get('usuarios/adicionarponto', 'UsuarioController@showpontoform')->name('usuarios.adicionarponto');
+        Route::post('usuarios/assinarponto', 'UsuarioController@assinarponto')->name('usuarios.assinarponto');
+
     });
 });

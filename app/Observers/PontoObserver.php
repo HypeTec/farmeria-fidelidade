@@ -16,7 +16,7 @@ class PontoObserver
     public function created(Point $ponto)
     {
         $card = $ponto->card;
-        if ($card->pontos->count() == 9)
+        if ($card->pontos->count() == 10)
         {
             $card->full = true;
             $card->save();
