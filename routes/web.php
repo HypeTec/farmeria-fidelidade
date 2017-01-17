@@ -34,7 +34,7 @@ Route::group(['prefix' => 'backend'], function(){
             ->name('operadores.select');
         Route::post('operadores/changeStatus/{id}','OperadorController@changeStatus')->name('operadores.changestatus');
         Route::get('cartao/adicionarponto', 'CardController@showpontoform')->name('cartao.adicionarponto');
-        Route::post('cartao/assinarponto', 'CardController@assinarponto')->name('cartao.assinarponto');
+        Route::post('cartao/assinarponto', 'CardController@assinarponto')->name('cartao.assinarponto')->middleware('operador');
 
     });
 });
