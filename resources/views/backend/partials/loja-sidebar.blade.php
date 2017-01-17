@@ -29,8 +29,8 @@
                     <i class="fa fa-list"></i> <span>Usuários</span>
                 </a>
             </li>
-            <li {!! str_is(route('usuarios.adicionarponto') . '*', url()->current()) ? 'class="active"' : '' !!}>
-                <a href="{{ route('usuarios.adicionarponto') }}">
+            <li {!! str_is(route('cartao.adicionarponto') . '*', url()->current()) ? 'class="active"' : '' !!}>
+                <a href="{{ route('cartao.adicionarponto') }}">
                   <i class="fa fa-list"></i> <span>Cadastrar ponto</span>
                 </a>
             </li>

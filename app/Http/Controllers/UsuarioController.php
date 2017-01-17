@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use Validator;
+use Carbon\Carbon;
 
 class UsuarioController extends CrudController
 {
@@ -49,6 +50,7 @@ class UsuarioController extends CrudController
 
     public function store(Request $request)
     {
+
         $validator = $this->validateRulesOnCreate($request);
         if($validator->fails())
         {
@@ -59,7 +61,8 @@ class UsuarioController extends CrudController
         {
           if ($request->get($column) != "")
           {
-            $this->getModel()->$column = ($column == 'password' ? bcrypt($request->get($column)) : $request->get($column));
+            $this->getModel()->$column = ($column == 'password' ? bcrypt($request->get($column)) :
+            ($column == 'data_nascimento' ? Carbon::parse($request->get('data_nascimento')) : $request->get($column)));
           }
         }
 
@@ -120,14 +123,31 @@ class UsuarioController extends CrudController
         }
     }
 
-    public function showpontoform()
-    {
-      return view('usuarios.cartao');
-    }
+    
 
     public function assinarponto(Request $request, $id)
     {
 
+    }
+
+    public function select(Request $request)
+    {
+        $usuarios = Usuario::when(
+            $q = $request->input('q'), function ($query) use ($q) {
+                return $query->where('nome', 'ilike', "%{$q}%");
+            })->paginate(20);
+
+        return response()->json([
+            'results' => $usuarios->map(function ($usuario) {
+                return [
+                    'id' => $usuario->id,
+                    'text' => "{$usuario->nome} ({$usuario->cpf})"
+                ];
+            }),
+            'pagination' => [
+                'more' => $usuarios->hasMorePages(),
+            ],
+        ]);
     }
 
 

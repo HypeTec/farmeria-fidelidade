@@ -28,8 +28,10 @@ Route::group(['prefix' => 'backend'], function(){
         Route::resource('lojas', 'LojaController');
         Route::resource('operadores', 'OperadorController');
         Route::resource('usuarios', 'UsuarioController');
+        Route::get('api/usuarios', 'UsuarioController@select')
+            ->name('usuarios.select');
         Route::post('operadores/changeStatus/{id}','OperadorController@changeStatus')->name('operadores.changestatus');
-        Route::get('usuarios/adicionarponto', 'UsuarioController@showpontoform')->name('usuarios.adicionarponto');
+        Route::get('cartao/adicionarponto', 'CardController@showpontoform')->name('cartao.adicionarponto');
         Route::post('usuarios/assinarponto', 'UsuarioController@assinarponto')->name('usuarios.assinarponto');
 
     });
