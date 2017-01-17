@@ -15,7 +15,7 @@ class Operador extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'password', 'status_id'
+        'name', 'username', 'password', 
     ];
     //'loja_id'
     public function getFillables()

@@ -61,8 +61,7 @@ class UsuarioController extends CrudController
         {
           if ($request->get($column) != "")
           {
-            $this->getModel()->$column = ($column == 'password' ? bcrypt($request->get($column)) :
-            ($column == 'data_nascimento' ? Carbon::parse($request->get('data_nascimento')) : $request->get($column)));
+            $this->getModel()->$column = ($column == 'password' ? bcrypt($request->get($column)) : $request->get($column));
           }
         }
 
@@ -123,7 +122,7 @@ class UsuarioController extends CrudController
         }
     }
 
-    
+
 
     public function assinarponto(Request $request, $id)
     {

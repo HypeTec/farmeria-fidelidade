@@ -13,4 +13,19 @@ class CardController extends Controller
     $usuarios = Usuario::all();
     return view('usuarios.cartao', compact('usuarios'));
   }
+
+  public function validateRulesOnCreate(Request $request)
+  {
+  $rules = [
+    'usuario_id' => 'required',
+    'username' => 'required',
+    'password' => 'required',
+  ];
+  return Validator::make($request->all(), $rules);
+  }
+
+  public function assinarponto(Request $request)
+  {
+    echo "oi";
+  }
 }

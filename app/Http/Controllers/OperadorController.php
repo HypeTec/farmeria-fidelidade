@@ -18,6 +18,7 @@ class OperadorController extends CrudController
         $this->paginatorLimit = 10;
         parent::__construct(Operador::class);
         $this->middleware('admin');
+        $this->route_base_name = 'operadores';
     }
 
     public function validateRulesOnCreate(Request $request)
@@ -35,6 +36,7 @@ class OperadorController extends CrudController
 		$rules = [
 			'name' => 'required',
 			'username' => 'required',
+
 
 		];
 		return Validator::make($request->all(), $rules);
@@ -180,6 +182,26 @@ class OperadorController extends CrudController
       }
 
 
+    }
+
+    public function select(Request $request)
+    {
+        $usuarios = Operador::when(
+            $q = $request->input('q'), function ($query) use ($q) {
+                return $query->where('name', 'ilike', "%{$q}%");
+            })->paginate(20);
+
+        return response()->json([
+            'results' => $usuarios->map(function ($usuario) {
+                return [
+                    'id' => $usuario->id,
+                    'text' => "{$usuario->name} ({$usuario->username})"
+                ];
+            }),
+            'pagination' => [
+                'more' => $usuarios->hasMorePages(),
+            ],
+        ]);
     }
 
 

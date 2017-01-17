@@ -54,7 +54,7 @@
   </div>
 </div>
 @endsection
-@section('extra_scripts')
+@push('extra_scripts')
 <script>
 $(document).ready(function (){
   $('.date').mask('00/00/0000');
@@ -63,4 +63,4 @@ $(document).ready(function (){
   $('.fixo').mask('(00) 0000-0000');
 })
 </script>
-@endsection
+@endpush

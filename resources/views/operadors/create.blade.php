@@ -21,15 +21,6 @@
               <label for="password">Senha</label>
               <input type="password" name="password" class="form-control" id="password" placeholder="Senha">
             </div>
-            <div class="form-group">
-              <label for="loja_id">Loja</label> <br />
-              <select name="loja_id">
-                <option value="" selected>Selecione uma loja</option>
-                @foreach ($lojas as $l)
-                <option value="{{$l->id}}">{{$l->nome}}</option>
-                @endforeach
-              </select>
-            </div>
 
             <button type="submit" class="btn btn-default">Criar</button>
             <a href="{{ route('operadores.index') }}" class="btn btn-danger pull-right">Cancelar</a>

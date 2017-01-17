@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 
 class Usuario extends Model
 {
@@ -28,5 +28,9 @@ class Usuario extends Model
       return $this->hasMany('App\Card')->where('full', '=', 0);
     }
 
+    public function setDataNascimentoAttribute($value)
+    {
+      $this->attributes['data_nascimento'] = Carbon::parse($value);
+    }
 
 }

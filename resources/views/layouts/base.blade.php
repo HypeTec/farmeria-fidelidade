@@ -48,6 +48,6 @@
 </div>
 @yield('extra_modals')
 <script src="{{ asset('assets/backend/js/all.js') }}"></script>
-@yield('extra_scripts')
+@stack('extra_scripts')
 </body>
 </html>
