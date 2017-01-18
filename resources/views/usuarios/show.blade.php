@@ -44,6 +44,10 @@
 								<th>Fixo</th>
 								<td>{{ $item->fixo }}</td>
 							</tr>
+              <tr>
+                <th>Cartão fidelidade</th>
+                <td>@include('partials.loyaltycard')</td>
+              </tr>
                         </table>
                     </div>
                 </div>
