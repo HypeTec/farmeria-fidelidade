@@ -46,7 +46,7 @@
 							</tr>
               <tr>
                 <th>Cartão fidelidade</th>
-                <td>@include('partials.loyaltycard')</td>
+                <td>@include('backend.partials.loyaltycard')</td>
               </tr>
                         </table>
                     </div>
