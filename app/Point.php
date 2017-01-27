@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Point extends Model
 {
@@ -10,4 +11,7 @@ class Point extends Model
     {
         return $this->belongsTo('App\Card');
     }
+
+
+
 }
