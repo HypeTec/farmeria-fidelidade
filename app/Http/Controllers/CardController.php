@@ -46,10 +46,18 @@ class CardController extends Controller
       DB::beginTransaction();
       try
       {
+        if ($this->checkDate($p->data_compra, $request->get('usuario_id')))
+        {
+          DB::rollBack();
+          return redirect(route('cartao.adicionarponto'))->withErrors('Já existe uma assinatura de ponto neste dia!');
+        }
+
+        else
+        {
           $this->savepoint($p, $request->get('usuario_id'));
           DB::commit();
-
           return redirect(route('cartao.adicionarponto'))->with('success', 'registro criado com sucesso');
+        }
       }
       catch(\Exception $ex)
       {
@@ -62,6 +70,12 @@ class CardController extends Controller
 
   public function savepoint(Point $p, $user_id)
   {
-    Usuario::find($user_id)->card()->pontos()->save($p);
+    Usuario::find($user_id)->card()->first()->pontos()->save($p);
+  }
+
+  public function checkDate($date, $user_id)
+  {
+    $user = Usuario::find($user_id);
+    return Point::where('data_compra', '=', $date)->where('card_id', '=', $user->card->first()->id)->exists();
   }
 }
