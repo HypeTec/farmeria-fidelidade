@@ -61,21 +61,7 @@ $(function () {
     },
     width: "100%"
   });
-  $("#operador").select2({
-    placeholder: 'Selecione um operador',
-    ajax: {
-      url: "{{ route('operadores.select') }}",
-      dataType: "json",
-      delay: 250,
-      data: function (params) {
-        return {
-        q: params.term,
-        page: params.page
-      };
-    },
-  width: "100%"
-}
-});
+
 });
 </script>
 @endpush

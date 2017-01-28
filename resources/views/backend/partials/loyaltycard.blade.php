@@ -43,5 +43,6 @@
   for (var i = 0; i < indexes ; i++)
   {
     cols[i].style.backgroundColor = "#99ff66";
+    cols[i].innerHtml =
   }
 </script>

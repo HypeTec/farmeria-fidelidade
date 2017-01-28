@@ -20,9 +20,12 @@
 									<th>Email</th>
 									<th>Celular</th>
 									<th>Fixo</th>
-
                                     <th class="text-right">Opções</th>
                                 </tr>
+                            <form action="{{ route('usuarios.index') }}" method="GET">
+                                <input type="text" name="filterSearch" placeholder="Insira a busca aqui">
+                                <button type="submit" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-search"></i> Buscar usuário</button>
+                            </form>
                             </thead>
 
                             <tbody>
@@ -41,7 +44,7 @@
                                         <td class="text-right">
                                             <a class="btn btn-xs btn-primary" href="{{ route('usuarios.show', $item->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
                                             <a class="btn btn-xs btn-warning" href="{{ route('usuarios.edit', $item->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-                                            <form action="{{ route('usuarios.destroy', $item->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar?')) { return true } else {return false };">
+                                            <form action="{{ route('usuarios.destroy', $item->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Deletar?')) { return true } else {return false }">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Deletar</button>
