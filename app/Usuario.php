@@ -30,7 +30,10 @@ class Usuario extends Model
 
     public function setDataNascimentoAttribute($value)
     {
-      $this->attributes['data_nascimento'] = Carbon::parse($value);
+        $data = Carbon::createFromFormat('d/m/Y', $value);
+      $this->attributes['data_nascimento'] = $data->format('Y-m-d');
     }
+
+    protected $dates = ['data_nascimento'];
 
 }

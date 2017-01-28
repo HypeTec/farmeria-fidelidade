@@ -41,8 +41,8 @@ class CardController extends Controller
       $p = new Point();
       $p->cupomfiscal = $request->get('cupomfiscal');
       $p->data_compra = "";
-      $data = (\Carbon\Carbon::createFromFormat('d/m/Y', $request->get('data_compra')))->format('Y-m-d');
-      $p->data_compra = $data;
+      $data = (\Carbon\Carbon::createFromFormat('d/m/Y', $request->get('data_compra')));
+      $p->data_compra = $data->format('Y-m-d');
       $p->operador_id = Operador::where('username', '=', $request->get('operador_username'))->first()->id;
 
       //Usuario::find($request->get('usuario_id'))->card()->first()->pontos()->save($p);
@@ -79,7 +79,7 @@ class CardController extends Controller
   public function checkDate($date, $user_id)
   {
     $user = Usuario::find($user_id);
-    return Point::where('data_compra', '=', (\Carbon\Carbon::createFromFormat('d/m/Y', $date))->format('Y-m-d'))
+    return Point::where('data_compra', '=', $date)
         ->where('card_id', '=', $user->card->first()->id)->exists();
   }
 }
