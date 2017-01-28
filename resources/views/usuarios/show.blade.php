@@ -47,7 +47,16 @@
               <tr>
                 <th>Cartão fidelidade</th>
                 <td>@include('backend.partials.loyaltycard')</td>
+
               </tr>
+							<tr>
+
+								<td class="text-right">
+									<div class="text-right">
+										<a class="btn btn-xs btn-primary" href="{{ route('cartao.adicionarponto') }}"> <i class="glyphicon glyphicon-plus-sign"></i> Adicionar ponto</a>
+									</div>
+								</td>
+							</tr>
                         </table>
                     </div>
                 </div>
