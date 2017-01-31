@@ -41,7 +41,7 @@ class CardController extends Controller
       $p = new Point();
       $p->cupomfiscal = $request->get('cupomfiscal');
       $p->data_compra = "";
-      $data = (\Carbon\Carbon::createFromTimestamp('d/m/Y', $request->get('data_compra')));
+      $data = Carbon::parse($request->get('data_compra'));
       $p->data_compra = $data->format('Y-m-d');
       $p->operador_id = Operador::where('username', '=', $request->get('operador_username'))->first()->id;
 
