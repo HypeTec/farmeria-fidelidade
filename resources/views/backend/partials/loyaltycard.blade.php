@@ -39,10 +39,15 @@
 
 <script>
   var indexes = {{ $item->card()->first()->pontos->count() }};
+  console.log(indexes);
+  var pontos = {!! $item->pontosJson() !!};
+  console.log(pontos);
   var cols = document.getElementsByClassName('ponto');
   for (var i = 0; i < indexes ; i++)
   {
-    cols[i].style.backgroundColor = "#99ff66";
-    cols[i].innerHtml =
+    cols[i].style.backgroundColor = "green";
+    cols[i].style.color = "white";
+    cols[i].innerHTML += "Cupom fiscal:" + pontos[i].cupomfiscal + "<br />Data da compra: " + pontos[i].data_compra;
   }
+
 </script>

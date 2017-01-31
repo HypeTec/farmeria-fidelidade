@@ -151,9 +151,17 @@ class UsuarioController extends CrudController
 
 
 
-    public function assinarponto(Request $request, $id)
+    public function show($id)
     {
-
+        try
+        {
+            $item = $this->getModel()->findOrFail($id);
+            return view($this->templatePrefix . '.show', compact('item'));
+        }
+        catch(ModelNotFoundException $ex)
+        {
+            return redirect(route($this->route_base_name . '.index'))->withErrors($ex->getMessage());
+        }
     }
 
     public function select(Request $request)

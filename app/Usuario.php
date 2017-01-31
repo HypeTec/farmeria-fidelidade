@@ -34,6 +34,11 @@ class Usuario extends Model
       $this->attributes['data_nascimento'] = $data->format('Y-m-d');
     }
 
+    public function pontosJson()
+    {
+      return $this->card()->first()->pontos->toJson();
+    }
+
     protected $dates = ['data_nascimento'];
 
 }
