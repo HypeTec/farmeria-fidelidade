@@ -9,13 +9,31 @@ use App\Operador;
 use Validator;
 use DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+
 
 class CardController extends Controller
 {
 
   public function showpontoform()
   {
-    return view('usuarios.cartao');
+    $filter = Input::get('filterSearch'); // or using a Request instance
+
+    if ($filter !== null)
+    {
+        // do something with my eloquent query builder that might involve the key
+        try {
+
+          $usuario = Usuario::find($filter);
+          return view('usuarios.cartao', compact('usuario'));
+        } catch (ModelNotFoundException $ex) {
+          return view('usuarios.cartao')->withErrors($ex->getMessage());
+        }
+    }
+    else
+    {
+        return view('usuarios.cartao');
+    }
   }
 
   public function validateRulesOnCreate(Request $request)
@@ -81,7 +99,7 @@ class CardController extends Controller
 
   public function checkDate($date, $user_id)
   {
-  
+
     $user = Usuario::find($user_id);
     return Point::where('data_compra', '=', $date->format('Y-m-d'))
         ->where('card_id', '=', $user->card->first()->id)->exists();

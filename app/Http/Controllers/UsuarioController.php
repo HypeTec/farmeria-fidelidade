@@ -153,6 +153,7 @@ class UsuarioController extends CrudController
 
     public function show($id)
     {
+
         try
         {
             $item = $this->getModel()->findOrFail($id);
@@ -186,6 +187,8 @@ class UsuarioController extends CrudController
             ],
         ]);
     }
+
+
 
 
 

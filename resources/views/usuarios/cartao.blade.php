@@ -11,7 +11,11 @@
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="usuario">Usuário</label>
-                                <select class="form-control select2" id="usuario" name="usuario_id" required></select>
+                                <select class="form-control select2" id="usuario" name="usuario_id" required>
+                                  @if (isset($usuario))
+                                  <option value="{{$usuario->id}}">{{$usuario->nome}} {{($usuario->cpf)}}</option>
+                                  @endif
+                                </select>
                             </div>
 
                             <div class="form-group">

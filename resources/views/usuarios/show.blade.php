@@ -52,7 +52,7 @@
 							<tr>
 
 								<td>
-									<a class="btn btn-xs btn-primary pull-right" href="{{ route('cartao.adicionarponto') }}"> <i class="glyphicon glyphicon-plus-sign"></i> Adicionar ponto</a>
+									<a class="btn btn-xs btn-primary pull-right" href="{{ route('cartao.adicionarponto',  ['filterSearch' => $item->id]) }}"> <i class="glyphicon glyphicon-plus-sign"></i> Adicionar ponto</a>
 
 								</td>
 							</tr>
