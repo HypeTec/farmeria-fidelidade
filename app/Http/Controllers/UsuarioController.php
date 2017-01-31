@@ -168,7 +168,7 @@ class UsuarioController extends CrudController
     {
         $usuarios = Usuario::when(
             $q = $request->input('q'), function ($query) use ($q) {
-                return $query->where('nome', 'ilike', "%{$q}%")->orWhere('cpf', 'ilike', "%{$q}")->
+                return $query->where('nome', 'ilike', "%{$q}%")->orWhere('cpf', 'ilike', "%{$q}%")->
                     orWhere('pin', 'ilike', "%{$q}%")->
                     orWhere('fixo', 'ilike', "%{$q}%")->
                     orWhere('celular', 'ilike', "%{$q}%");
