@@ -123,12 +123,7 @@ class UsuarioController extends CrudController
 
           if ($request->get($column) != "")
           {
-            if ($column == 'data_nascimento') {
-
-                $data = Carbon::parse($request->get($column));
-
-                $item->$column = $data->toFormattedDateString();
-            }
+          
 
             $item->$column = ($column == 'password' ? bcrypt($request->get($column)) : $request->get($column));
           }

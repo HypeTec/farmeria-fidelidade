@@ -36,7 +36,7 @@
 										<td>{{ $item->nome }}</td>
 										<td>{{ $item->pin }}</td>
 										<td>{{ $item->sexo }}</td>
-										<td>{{ $item->data_nascimento }}</td>
+										<td>@if (isset($item->data_nascimento)) {{ $item->data_nascimento->format('d/m/Y') }} @endif</td>
 										<td>{{ $item->cpf }}</td>
 										<td>{{ $item->email }}</td>
 										<td>{{ $item->celular }}</td>

@@ -26,7 +26,7 @@
 							</tr>
 							<tr>
 								<th>Data de nascimento</th>
-								<td>{{ $item->data_nascimento->format('d/m/Y') }}</td>
+								<td>@if (isset($item->data_nascimento)) {{ $item->data_nascimento->format('d/m/Y') }} @endif</td>
 							</tr>
 							<tr>
 								<th>CPF</th>

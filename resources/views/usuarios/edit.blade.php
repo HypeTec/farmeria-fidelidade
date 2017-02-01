@@ -27,7 +27,7 @@
               </div>
 							<div class="form-group">
 								<label for="data_nascimento">Data de nascimento</label>
-								<input type="text" name="data_nascimento" value="{{ $item->data_nascimento }}" class="form-control date" id="data_nascimento" placeholder="Data de nascimento">
+								<input type="text" name="data_nascimento" value="@if (isset($item->data_nascimento)) {{ $item->data_nascimento->format('d/m/Y') }} @endif" class="form-control date" id="data_nascimento" placeholder="Data de nascimento">
 							</div>
 							<div class="form-group">
 								<label for="cpf">CPF</label>
@@ -54,7 +54,7 @@
         </div>
     </div>
 @endsection
-@section('extra_scripts')
+@push('extra_scripts')
 <script>
 $(document).ready(function (){
   $('.date').mask('00/00/0000');
@@ -63,4 +63,4 @@ $(document).ready(function (){
   $('.fixo').mask('(00) 0000-0000');
 })
 </script>
-@endsection
+@endpush

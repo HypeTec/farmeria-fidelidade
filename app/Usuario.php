@@ -30,8 +30,8 @@ class Usuario extends Model
 
     public function setDataNascimentoAttribute($value)
     {
-        $data = Carbon::createFromFormat('d/m/Y', $value);
-      $this->attributes['data_nascimento'] = $data->format('Y-m-d');
+      $data = Carbon::createFromFormat('d/m/Y', $value);
+      $this->attributes['data_nascimento'] = $data;
     }
 
     public function pontosJson()
