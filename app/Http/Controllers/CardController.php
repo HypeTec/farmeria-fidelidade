@@ -80,7 +80,7 @@ class CardController extends Controller
         {
           $this->savepoint($p, $request->get('usuario_id'));
           DB::commit();
-          return redirect(route('cartao.adicionarponto'))->with('success', 'registro criado com sucesso');
+          return redirect(route('usuarios.show', $request->get('usuario_id')))->with('success', 'registro criado com sucesso');
         }
       }
       catch(\Exception $ex)
