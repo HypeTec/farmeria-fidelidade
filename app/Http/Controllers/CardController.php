@@ -25,6 +25,7 @@ class CardController extends Controller
         try {
 
           $usuario = Usuario::find($filter);
+          
           return view('usuarios.cartao', compact('usuario'));
         } catch (ModelNotFoundException $ex) {
           return view('usuarios.cartao')->withErrors($ex->getMessage());

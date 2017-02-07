@@ -204,4 +204,6 @@ class OperadorController extends CrudController
         ]);
     }
 
+
+
 }

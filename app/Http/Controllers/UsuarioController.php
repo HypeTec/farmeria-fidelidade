@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Usuario;
+use App\Operador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -123,7 +124,7 @@ class UsuarioController extends CrudController
 
           if ($request->get($column) != "")
           {
-          
+
 
             $item->$column = ($column == 'password' ? bcrypt($request->get($column)) : $request->get($column));
           }
@@ -152,7 +153,9 @@ class UsuarioController extends CrudController
         try
         {
             $item = $this->getModel()->findOrFail($id);
-            return view($this->templatePrefix . '.show', compact('item'));
+            $op_ids = $item->card()->first()->pontos()->pluck('operador_id');
+            $operadores = Operador::whereIn('id', $op_ids)->select('id', 'name')->get();
+            return view($this->templatePrefix . '.show', compact('item', 'operadores'));
         }
         catch(ModelNotFoundException $ex)
         {
