@@ -52,9 +52,9 @@
   var cols = document.getElementsByClassName('ponto');
   for (var i = 0; i < indexes ; i++)
   {
-    cols[i].style.backgroundColor = "green";
-    cols[i].style.color = "white";
-    cols[i].innerHTML += "Cupom fiscal:" + pontos[i].cupomfiscal + "<br />Data da compra: " + pontos[i].data_compra + "<br />Operador: " + operadores[pontos[i].operador_id];
+    cols[i].style.fontSize = "x-small";
+    cols[i].innerHTML = '<img class="img-responsive img-circle center-block" src="/assets/images/check-tick-icon-14150.png">';
+    cols[i].innerHTML += "<p>Cupom fiscal:" + pontos[i].cupomfiscal + "</p><p>Data da compra: " + pontos[i].data_compra + "</p><p>Operador:" + operadores[pontos[i].operador_id] + "</p>";
   }
 
 </script>
