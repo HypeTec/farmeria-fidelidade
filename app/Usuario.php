@@ -28,6 +28,11 @@ class Usuario extends Model
       return $this->hasMany('App\Card')->where('full', '=', 0);
     }
 
+    public function fullCards()
+    {
+      return $this->hasMany('App\Card')->where('full', '=', 1);
+    }
+
     public function setDataNascimentoAttribute($value)
     {
       $data = Carbon::createFromFormat('d/m/Y', $value);
