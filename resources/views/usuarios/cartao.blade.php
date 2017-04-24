@@ -49,6 +49,7 @@
 $(function () {
   $(".datepicker").datepicker();
   $(".datepicker").datepicker("option", "dateFormat", "dd/mm/yy");
+  $(".datepicker").mask('00/00/0000');
 
   $("#usuario").select2({
     placeholder: 'Selecione um usuário',
