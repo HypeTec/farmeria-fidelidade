@@ -1,33 +1,35 @@
 @extends('layouts.base')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Usuarios <a class="btn btn-xs btn-primary pull-right" href="{{ route('usuarios.create') }}"><i class="glyphicon glyphicon-plus"></i> adicionar Usuário</a></div>
-                <div class="panel-body">
-                    @if($list->count())
-                        <table class="table table-condensed table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-									<th>Nome</th>
-									<th>Pin</th>
-									<th>Sexo</th>
-									<th>Data de nascimento</th>
-									<th>CPF</th>
-									<th>Email</th>
-									<th>Celular</th>
-									<th>Fixo</th>
-                                    <th class="text-right">Opções</th>
-                                </tr>
-                            <form action="{{ route('usuarios.index') }}" method="GET">
-                                <input type="text" name="filterSearch" placeholder="Insira a busca aqui">
-                                <button type="submit" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-search"></i> Buscar usuário</button>
-                            </form>
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                Usuários
+                <a class="btn btn-xs btn-primary pull-right" href="{{ route('usuarios.create') }}"><i class="glyphicon glyphicon-plus"></i> Adicionar Usuário</a>
+            </div>
+            <div class="box-body">
+                @if($list->count())
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Pin</th>
+                                <th>Sexo</th>
+                                <th>Data de nascimento</th>
+                                <th>CPF</th>
+                                <th>Email</th>
+                                <th>Celular</th>
+                                <th>Fixo</th>
+                                <th class="text-right">Opções</th>
+                            </tr>
+                            <tr>
+                                <form action="{{ route('usuarios.index') }}" method="GET">
+                                    <input type="text" name="filterSearch" placeholder="Insira a busca aqui">
+                                    <button type="submit" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-search"></i> Buscar usuário</button>
+                                </form>
+                            </tr>
                             </thead>
-
                             <tbody>
                                 @foreach($list as $item)
                                     <tr>
@@ -57,9 +59,9 @@
                         <div class="text-center">
                             {{ $list->appends(Request::all())->links() }}
                         </div>
-                    @else
-                        <h3 class="text-center alert alert-info">Não há registros</h3>
-                    @endif
+                @else
+                    <h3 class="text-center alert alert-info">Não há registros</h3>
+                @endif
                 </div>
             </div>
         </div>
