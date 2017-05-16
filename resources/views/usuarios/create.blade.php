@@ -45,6 +45,11 @@
               <label for="fixo">Fixo</label>
               <input type="text" name="fixo" class="form-control fixo" id="fixo" placeholder="Celular" value="{{ old('fixo') }}">
             </div>
+            <div class="form-group">
+              <label for="observacoes">Observações</label>
+              <input type="text" name="observacao[]" class="form-control" placeholder="Observação">
+              <button class="btn btn-primary btn-xs">Adicionar observação</button>
+            </div>
             <button type="submit" class="btn btn-default">Criar</button>
             <a href="{{ route('usuarios.index') }}" class="btn btn-danger pull-right">Cancelar</a>
           </form>
@@ -57,6 +62,7 @@
 @push('extra_scripts')
 <script>
 $(document).ready(function (){
+
   $('.date').mask('00/00/0000');
   $('.cpf').mask('000.000.000-00');
   $('.phone').mask('(00) 00000-0000');

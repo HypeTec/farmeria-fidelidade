@@ -25,12 +25,17 @@ class Usuario extends Model
 
     public function card()
     {
-      return $this->hasMany('App\Card')->where('full', '=', 0);
+      return $this->hasMany(Card::class)->where('full', '=', 0);
     }
 
     public function fullCards()
     {
-      return $this->hasMany('App\Card')->where('full', '=', 1);
+      return $this->hasMany(Card::class)->where('full', '=', 1);
+    }
+
+    public function observacoes()
+    {
+        return $this->hasMany(Observacao::class);
     }
 
     public function setDataNascimentoAttribute($value)
