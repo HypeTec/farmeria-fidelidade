@@ -29,6 +29,8 @@ class UsuarioController extends CrudController
     public function __construct()
     {
         $this->paginatorLimit = 10;
+        $this->middleware('auth')->only(['index', 'show', 'edit', 'update', 'store', 'delete', 'create']);
+        $this->middleware('usuario.logado')->only('show');
         parent::__construct(Usuario::class);
     }
 
@@ -145,11 +147,47 @@ class UsuarioController extends CrudController
         }
     }
 
+    public function loginForm()
+    {
+        return view('usuarios.login');
+    }
 
+    public function logarUsuario(Request $request)
+    {
+        $this->validate($request, [
+            'email' => ['required', ],
+            'cpf' => ['required', ],
+        ]);
+
+        $usuario = Usuario::where('email', $request->get('email'))
+            ->where('cpf', $request->get('cpf'))->first();
+
+        if ($usuario)
+        {
+            $op_ids = $usuario->card()->first()->pontos()->pluck('operador_id');
+            $operadores = Operador::whereIn('id', $op_ids)->select('id', 'name')->get();
+            $request->session()->put('usuario_id', $usuario->id);
+
+            return view($this->templatePrefix . '.show', [
+                'item' => $usuario,
+                'operadores' => $operadores,
+            ]);
+        }
+        else
+        {
+            return redirect()->back()->withErrors('As credenciais de acesso estão incorretas!');
+        }
+    }
+
+    public function logoutUsuario(Request $request)
+    {
+
+        $request->session()->flush();
+        return redirect('/backend');
+    }
 
     public function show($id)
     {
-
         try
         {
             $item = $this->getModel()->findOrFail($id);

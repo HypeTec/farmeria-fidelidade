@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\LoggedUserCardMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -54,5 +55,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
         'operador' => \App\Http\Middleware\CheckOperadorCredentialsMiddleware::class,
+        'usuario.logado' => \App\Http\Middleware\LoggedUserCardMiddleware::class,
     ];
 }
