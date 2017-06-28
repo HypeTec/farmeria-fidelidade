@@ -31,10 +31,12 @@
             </a>
         </nav>
     </header>
-    @if (Auth::user()->role_id==999)
-        @include('backend.partials.main-sidebar')
-    @elseif (Auth::user()->role_id==1)
-        @include('backend.partials.loja-sidebar')
+    @if(Auth::check())
+        @if (Auth::user()->role_id==999)
+            @include('backend.partials.main-sidebar')
+        @elseif (Auth::user()->role_id==1)
+            @include('backend.partials.loja-sidebar')
+        @endif
     @endif
 
     <div class="content-wrapper">

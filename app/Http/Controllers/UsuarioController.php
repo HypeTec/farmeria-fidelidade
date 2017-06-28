@@ -154,6 +154,7 @@ class UsuarioController extends CrudController
 
     public function logarUsuario(Request $request)
     {
+
         $this->validate($request, [
             'email' => ['required', ],
             'cpf' => ['required', ],

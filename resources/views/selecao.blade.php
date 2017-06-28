@@ -16,11 +16,16 @@
 </head>
 <body>
     <div class="text-center">
+        <div class="row">
         <div class="col-md-12">
-            <a href="#" class="btn btn-lg btn-primary">Acessar coisa 1</a>
+            <a href="{{ route('login.usuario') }}" class="btn btn-lg btn-primary">Visualizar meu cartão</a>
         </div>
+        </div>
+        <br />
+        <div class="row">
         <div class="col-md-12">
-            <a href="#" class="btn btn-lg btn-primary">Acessar coisa 2</a>
+            <a href="{{ url('/backend/login') }}" class="btn btn-lg btn-primary">Acesso administrativo</a>
+        </div>
         </div>
     </div>
 </body>

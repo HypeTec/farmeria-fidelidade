@@ -36,7 +36,7 @@
       {{ csrf_field() }}
 
       <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }} has-feedback">
-        <input type="text" class="form-control" placeholder="Nome de usuário" name="username" value="{{ old('email') }}" required autofocus >
+        <input type="text" class="form-control" placeholder="Nome de usuário" name="username" value="{{ old('username') }}" required autofocus >
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
