@@ -44,6 +44,18 @@
 								<th>Fixo</th>
 								<td>{{ $item->fixo }}</td>
 							</tr>
+							<tr>
+								<th>Observações</th>
+								<td>
+									<form>
+										<div class="form-group">
+											<input type="text" name="observacao[]" class="form-control" placeholder="Observação">
+											<button class="btn btn-primary btn-xs">Adicionar observação</button>
+										</div>
+									</form>
+								</td>
+
+							</tr>
               <tr>
                 <th>Cartão fidelidade</th>
                 <td>@include('backend.partials.loyaltycard')</td>
