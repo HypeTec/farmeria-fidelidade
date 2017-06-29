@@ -20,14 +20,12 @@ Route::get('/login', function() {
   return redirect('/backend/login');
 });
 
-Route::get('/login_usuario', function() {
-    return redirect('backend/login_usuario');
-});
+Route::get('fidelidade', 'UsuarioController@loginForm')->name('login.usuario');
 
 Route::group(['prefix' => 'backend'], function(){
     Auth::routes();
     Route::resource('usuarios', 'UsuarioController');
-    Route::get('login_usuario', 'UsuarioController@loginForm')->name('login.usuario');
+
     Route::post('logar_usuario', 'UsuarioController@logarUsuario')->name('usuario.logar');
     Route::group(['middleware' => ['auth']], function(){
         Route::get('/', 'BackendController@index')->name('backend');

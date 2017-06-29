@@ -169,7 +169,7 @@ class UsuarioController extends CrudController
             $operadores = Operador::whereIn('id', $op_ids)->select('id', 'name')->get();
             $request->session()->put('usuario_id', $usuario->id);
 
-            return view($this->templatePrefix . '.show', [
+            return view('usuarios.show_guest', [
                 'item' => $usuario,
                 'operadores' => $operadores,
             ]);

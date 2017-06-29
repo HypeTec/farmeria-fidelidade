@@ -21,12 +21,7 @@
             <a href="{{ route('login.usuario') }}" class="btn btn-lg btn-primary">Visualizar meu cartão</a>
         </div>
         </div>
-        <br />
-        <div class="row">
-        <div class="col-md-12">
-            <a href="{{ url('/backend/login') }}" class="btn btn-lg btn-primary">Acesso administrativo</a>
-        </div>
-        </div>
+
     </div>
 </body>
 </html>

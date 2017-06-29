@@ -31,11 +31,11 @@
             </div>
             <div class="form-group">
               <label for="cpf">CPF</label>
-              <input type="text" name="cpf" class="form-control cpf" id="cpf" placeholder="CPF" value="{{ old('cpf') }}">
+              <input type="text" name="cpf" class="form-control cpf" id="cpf" placeholder="CPF" style="background-color: #FFFF00;" value="{{ old('cpf') }}">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" name="email" class="form-control" id="email" placeholder="Email" value="{{ old('email') }}">
+              <input type="text" name="email" class="form-control" id="email" placeholder="Email" style="background-color: #FFFF00;" value="{{ old('email') }}">
             </div>
             <div class="form-group">
               <label for="celular">Celular</label>
