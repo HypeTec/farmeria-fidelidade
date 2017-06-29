@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
                         <table class="table table-bordered table-striped">
                             <tr>
                                 <th>Nome</th>
