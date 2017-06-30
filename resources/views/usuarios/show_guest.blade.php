@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-body table-responsive">
+                    <div class="panel-body">
                         <table class="table table-bordered table-striped">
                             <tr>
                                 <th>Nome</th>
@@ -22,10 +22,6 @@
                             <tr>
                                 <th>CPF</th>
                                 <td>{{ $item->cpf }}</td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td>{{ $item->email }}</td>
                             </tr>
                             <tr>
                                 <th>Celular</th>
