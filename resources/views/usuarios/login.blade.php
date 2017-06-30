@@ -26,11 +26,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Farmeria</b> Fidelidade</a>
+        <img src="assets/images/logo_farmeria_full.png" class="img-responsive">
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Acesso do sistema</p>
+
         @include('backend.partials.system-alerts')
         <form action="{{ route('usuario.logar') }}" role="form" method="post">
             {{ csrf_field() }}
