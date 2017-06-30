@@ -39,16 +39,13 @@
 
 <script>
     var indexes = {{ $item->card()->first()->pontos->count() }};
-    console.log(indexes);
     var pontos = {!! $item->pontosJson() !!};
-    console.log(pontos);
     var operadores = {};
     function parse2dict(item, index)
     {
         operadores[item.id] = item.name;
     }
     {!! $operadores !!}.forEach(parse2dict);
-    console.log(operadores);
     var cols = document.getElementsByClassName('ponto');
     for (var i = 0; i < indexes ; i++)
     {
