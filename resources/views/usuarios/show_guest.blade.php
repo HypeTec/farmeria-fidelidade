@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped table-responsive">
                             <tr>
                                 <th>Nome</th>
                                 <td>{{ $item->nome }}</td>

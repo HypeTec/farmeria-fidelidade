@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<div id="gameboard" class="row">
-    <div class="col-md-12 row">
+<div id="gameboard">
+    <div class="col-xs-12 row">
         <div class="col-xs-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
@@ -17,7 +17,7 @@
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
     </div>
-    <div class="col-md-12 row">
+    <div class="col-xs-12 row">
         <div class="col-xs-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
