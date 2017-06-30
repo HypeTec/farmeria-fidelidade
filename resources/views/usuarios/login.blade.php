@@ -55,9 +55,11 @@
 
         <!-- /.social-auth-links -->
 
-
     </div>
     <!-- /.login-box-body -->
+    <div class="text-center">
+        <h4>Telefone: (84) 3027-1515</h4>
+    </div>
 </div>
 <!-- /.login-box -->
 
