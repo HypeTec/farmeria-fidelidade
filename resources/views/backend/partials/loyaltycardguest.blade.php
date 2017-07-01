@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <div id="gameboard" class="row">
     <div class="col-md-12 row">
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
     </div>
     <div class="col-md-12 row">
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
-        <div class="col-xs-2 ponto">
+        <div class="col-md-2 ponto">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
     </div>
