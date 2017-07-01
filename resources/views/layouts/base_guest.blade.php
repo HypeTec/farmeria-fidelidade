@@ -12,6 +12,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        @media only screen and (max-device-width: 600px) {
+            .col-xs-12.row
+            {
+                width: 600px;
+            }
+        }
+
+
+    </style>
     @yield('extra_styles')
 </head>
 <body class="hold-transition skin-green sidebar-mini fixed">
