@@ -6,7 +6,9 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <table class="table table-bordered table-striped table-responsive">
+                        <div class="table-responsive">
+                        <table class="table table-bordered table-striped ">
+
                             <tr>
                                 <th>Nome</th>
                                 <td>{{ $item->nome }}</td>
@@ -36,6 +38,7 @@
                                 <td>@include('backend.partials.loyaltycardguest')</td>
                             </tr>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

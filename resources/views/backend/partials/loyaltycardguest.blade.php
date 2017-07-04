@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<div id="gameboard">
+<div id="gameboard" class="row">
     <div class="col-xs-12 row">
-        <div class="col-xs-2 ponto">
+        <div class="col-xs-2">
             <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
         </div>
         <div class="col-xs-2 ponto">
