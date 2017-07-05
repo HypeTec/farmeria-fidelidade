@@ -6,7 +6,6 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="table-responsive">
                         <table class="table table-bordered table-striped ">
 
                             <tr>
@@ -34,11 +33,13 @@
                                 <td>{{ $item->fixo }}</td>
                             </tr>
                             <tr>
-                                <th>Cartão fidelidade</th>
-                                <td><img class="img-responsive" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png"</td>
+                                <div class="text-center">
+                                    <strong>Cartão fidelidade</strong>
+                                    <h4>Você tem:</h4>
+                                    <img class="img-responsive center-block" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png">
+                                </div>
                             </tr>
                         </table>
-                        </div>
                     </div>
                 </div>
             </div>
