@@ -8,6 +8,7 @@
                     <div class="panel-body">
                         <div class="table-responsive">
                         <table class="table table-bordered table-striped ">
+
                             <tr>
                                 <th>Nome</th>
                                 <td>{{ $item->nome }}</td>
