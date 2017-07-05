@@ -35,7 +35,7 @@
                             </tr>
                             <tr>
                                 <th>Cartão fidelidade</th>
-                                <td>@include('backend.partials.loyaltycardguest')</td>
+                                <td><img class="img-responsive" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png"</td>
                             </tr>
                         </table>
                         </div>
