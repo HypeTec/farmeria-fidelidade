@@ -32,17 +32,29 @@
                                 <th>Fixo</th>
                                 <td>{{ $item->fixo }}</td>
                             </tr>
-                            <tr>
-                                <div class="text-center">
-                                    <strong>Cartão fidelidade</strong>
-                                    <h4>Você tem:</h4>
-                                    <img class="img-responsive center-block" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png">
-                                </div>
-                            </tr>
                         </table>
+                        <div class="text-center">
+                            <strong>Cartão fidelidade</strong>
+                            <h4>Você tem:</h4>
+                            <img class="img-responsive center-block" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png">
+                        </div>
+                        <button class="btn btn-xs-primary" id="btn_vermais">Ver mais</button>
+                        <div class="hidden" id="texto_vermais">
+                        <p>Insira o texto aqui, Felipe!</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+@push('extra_scripts')
+    <script>
+        $(function () {
+            $("#btn_vermais").click(function () {
+                $("#texto_vermais").removeClass("hidden");
+            })
+        })
+    </script>
+@endpush
