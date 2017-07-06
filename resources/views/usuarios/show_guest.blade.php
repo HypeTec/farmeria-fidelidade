@@ -36,7 +36,7 @@
                         <div class="text-center">
                             <strong>Cartão fidelidade</strong>
                             <h4>Você tem:</h4>
-                            <img class="img-responsive center-block" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png">
+                            <img class="img-responsive center-block" style="max-width: 400px; max-height: 400px;" src="/assets/images/pontos_{{$item->card()->first()->pontos->count()}}.png">
                         </div>
                         <button class="btn btn-xs-primary" id="btn_vermais">Ver mais</button>
                         <div class="hidden" id="texto_vermais">
