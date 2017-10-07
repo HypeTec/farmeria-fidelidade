@@ -32,6 +32,8 @@ Route::group(['prefix' => 'backend'], function(){
         Route::resource('lojas', 'LojaController');
         Route::resource('operadores', 'OperadorController');
 
+        Route::get('historico', 'HistoricoController@index')->name('historico.index');
+
         Route::get('api/usuarios', 'UsuarioController@select')
             ->name('usuarios.select');
         Route::get('api/operadores', 'OperadorController@select')
