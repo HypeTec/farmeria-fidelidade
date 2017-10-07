@@ -19,16 +19,16 @@
                             <tbody>
                             @foreach($list as $item)
                                 <tr>
-                                    <td> {{ $item->card->usuario->nome }}</td>
-                                    <td> {{ $item->operador->username }}</td>
+                                    <td> {{ $item->card->usuario ? $item->card->usuario->nome : '' }}</td>
+                                    <td> {{ $item->operador ? $item->operador->username : ''}}</td>
                                     <td> {{ $item->data_compra->format('d/m/Y') }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                            <div class="text-center">
-                                {{ $list->appends(Request::all())->links() }}
-                            </div>
+                        <div class="text-center">
+                            {{ $list->appends(Request::all())->links() }}
+                        </div>
                     @else
                         <h3 class="text-center alert alert-info">Não há registros</h3>
                     @endif

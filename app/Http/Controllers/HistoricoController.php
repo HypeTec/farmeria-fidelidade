@@ -15,7 +15,8 @@ class HistoricoController extends Controller
 
     public function index()
     {
-        $list = Point::orderBy('data_compra')->paginate(50);
+        $list = Point::with(['card.usuario', 'operador'])->orderBy('data_compra', 'desc')->paginate(50);
+
         return view('historico.listagem', [
             'list' => $list
         ]);
