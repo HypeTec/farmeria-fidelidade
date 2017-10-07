@@ -44,6 +44,11 @@
                   <i class="fa fa-list"></i> <span>Cadastrar ponto</span>
                 </a>
             </li>
+            <li {!! str_is(route('historico.index') . '*', url()->current()) ? 'class="active"' : '' !!}>
+                <a href="{{ route('historico.index') }}">
+                    <i class="fa fa-list"></i> <span>Histórico</span>
+                </a>
+            </li>
             <li>
                 <a href="#" onclick="$('#sair').submit();">
                     <i class="fa fa-sign-out"></i> <span>Sair</span>
