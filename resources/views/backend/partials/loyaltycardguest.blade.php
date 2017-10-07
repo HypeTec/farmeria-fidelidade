@@ -2,36 +2,36 @@
 <div id="gameboard" class="row">
     <div class="col-xs-12 row">
         <div class="col-xs-2">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
     </div>
     <div class="col-xs-12 row">
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
         <div class="col-xs-2 ponto">
-            <img class="img-responsive img-circle center-block" src="/assets/images/logoFarmeria.jpg">
+            <img class="img-responsive img-circle center-block" src="{{asset('/assets/images/logoFarmeria.jpg')}}">
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
     for (var i = 0; i < indexes ; i++)
     {
         cols[i].style.fontSize = "x-small";
-        cols[i].innerHTML = '<img class="img-responsive img-circle center-block" src="/assets/images/check-tick-icon-14150.png">';
+        cols[i].innerHTML = '<img class="img-responsive img-circle center-block" src="{{asset('/assets/images/check-tick-icon-14150.png')}}">';
         cols[i].innerHTML += "<p>Cupom fiscal:" + pontos[i].cupomfiscal + "</p><p>Data da compra: " + pontos[i].data_compra + "</p>";
     }
 
