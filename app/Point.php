@@ -7,6 +7,11 @@ use Carbon\Carbon;
 
 class Point extends Model
 {
+
+    protected $dates = [
+        'data_compra'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

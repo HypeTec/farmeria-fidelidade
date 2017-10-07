@@ -20,8 +20,8 @@
                             @foreach($list as $item)
                                 <tr>
                                     <td> {{ $item->card->usuario->nome }}</td>
-                                    <td> {{ $item->operador->nome }}</td>
-                                    <td> {{ $item->data_compra }}</td>
+                                    <td> {{ $item->operador->name }}</td>
+                                    <td> {{ $item->data_compra->format('d/m/Y') }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
